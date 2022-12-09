@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    height: 10vh;
+    /* box-shadow: 1px 1px 20px gold; */
+    border-radius: 10px;
+    margin: 10px 10px 80px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.score-area{
+    width: 100%;
+    height: 50px;
+    
+    display: flex;
+    justify-content: center;
+}
+
+ .you, .computer, #you, #computer{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+
+.game-area{
+    width: 100%;
+    height: 60vh;
+    background-color: hsl(0, 0%, 12%);
+    position: relative;
+    left: -7px;
+    display: flex;
+
+    
+}
+
+.your-area{
+    width: 40%;
+    
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+
+
+
+
+.result-area{
+    width: 100%;
+    height: 20vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-box{
+    width: 500px;
+    height: 50px;
+   
+}
+
+#result{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+ 
+
+.weapons-container{
+    display: flex;
+   
+    flex-grow: 1;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weapon{
+    
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    margin: 30px;
+}
+
+.rock{
+    background-image: url('rock.jpg');
+    background-size: cover;
+    background-position: -60px 0px;
+    z-index: 10;
+}
+
+.rock:hover{
+    box-shadow: 1px 1px 20px silver;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    width: 220px;
+    height: 220px;
+}
+
+.paper{
+    background-image: url('paper.jpg');
+    background-size: cover;
+    background-position: 0px -40px;
+}
+.paper:hover{
+    box-shadow: 1px 1px 20px silver;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    width: 220px;
+    height: 220px;
+}
+
+.scissor{
+    background-image: url('scissor.jpg');
+    background-size: cover;
+    background-size: cover;
+    background-position: 0px -40px;
+}
+.scissor:hover{
+    box-shadow: 1px 1px 20px silver;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    width: 220px;
+    height: 220px;
+}
