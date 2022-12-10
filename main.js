@@ -39,7 +39,6 @@ function determineTheWinner(playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         updateComputerScore();
         updateYourScore();
-        
         return 'its a tie!';
         
         
@@ -78,29 +77,27 @@ function determineTheWinner(playerSelection, computerSelection){
    
 }
 
-
+let yourScore = 0;
+let computerScore = 0;
 
 
 function updateYourScore(){
     let you = document.getElementById('you')
-    let yourScore = 0;
-    you.innerHTML = ++yourScore;
-    
+    you.innerHTML = yourScore;
+    yourScore += 1;
+   
+   
 }
-
 
 
 function updateComputerScore(){
     let computer = document.getElementById('computer')
-    let computerScore = 0;
-    computer.innerHTML = ++computerScore;
-    return computerScore 
+    computer.innerHTML = computerScore;
+    computerScore += 1;
+    
+    
 }
 // console.log(determineTheWinner('rock', getComputerChoice()));
-
-
-
-
 
 
 
