@@ -28,7 +28,7 @@ function getUserChoice(Input){
 }
 
 
-//compare the two choices
+//compare the choices
 
 const playerSelection='rock';
 const computerSelection = getComputerChoice();
@@ -77,6 +77,8 @@ function determineTheWinner(playerSelection, computerSelection){
    
 }
 
+// declare increment function for score tracker
+
 let yourScore = 0;
 let computerScore = 0;
 
@@ -97,7 +99,7 @@ function updateComputerScore(){
     
     
 }
-// console.log(determineTheWinner('rock', getComputerChoice()));
+
 
 
 
@@ -166,22 +168,6 @@ scissor.addEventListener('click', ()=>{
     
 })
 
-
-// create score function
-
-//counter for score
-
-
-//increment counter for player when condition is satisfied
-
-
-function trackScore(){
-    const result = document.getElementById('result')
-
-    if(result.firstChild.innerHTML = ' You threw: rock. The computer threw: rock. its a tie!'){
-        alert('moincito')
-    }
-}
 
 
 
