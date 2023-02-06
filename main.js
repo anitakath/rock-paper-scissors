@@ -10,8 +10,6 @@ function getComputerChoice (){
     } else if(randomNumber === 2) {
         return 'scissor'
     } 
-    
-    
 }
 
 getComputerChoice();
@@ -33,71 +31,62 @@ function getUserChoice(Input){
 const playerSelection='rock';
 const computerSelection = getComputerChoice();
 
+let you = document.getElementById('you')
+let computer = document.getElementById('computer')
+let computerScore = 0;
+ let yourScore =0;
 
-function determineTheWinner(playerSelection, computerSelection){
+function compareChoices(playerSelection, computerSelection){
+    
+    
 
     if(playerSelection === computerSelection){
-        updateComputerScore();
-        updateYourScore();
+        /*updateComputerScore();
+        updateYourScore();*/
         return 'its a tie!';
         
-        
-
+    
     } else if(playerSelection === 'paper' && computerSelection === 'scissor'){
-        updateComputerScore();
+        //updateComputerScore();
+        computer.textContent = ++computerScore;
         return 'you loose'
+        
         
         
     } else if(playerSelection === 'paper' && computerSelection === 'rock'){
-        updateYourScore();
+        //updateYourScore();
+        you.textContent = ++yourScore;
         return 'you win'
+        
        
     } else if(playerSelection === 'scissor' && computerSelection === 'paper'){
-        updateYourScore();
+        //updateYourScore();
+        you.textContent = ++yourScore;
         return 'you win'
+        
        
         
     } else if(playerSelection === 'scissor' && computerSelection === 'rock'){
-        updateComputerScore();
+        //updateComputerScore();
+        computer.textContent = ++computerScore;
         return 'you loose'
-    
      
        
     } else if(playerSelection === 'rock' && computerSelection === 'scissor'){
-        updateYourScore();
+        //updateYourScore();
+        you.textContent = ++yourScore;
         return 'you win'
+        
        
        
     } else if(playerSelection === 'rock' && computerSelection === 'paper'){
-        updateComputerScore();
+       // updateComputerScore();
+       computer.textContent = ++computerScore;
         return 'you loose'
-        
+         
     }
 
    
-}
-
-// declare increment function for score tracker
-
-let yourScore = 0;
-let computerScore = 0;
-
-
-function updateYourScore(){
-    let you = document.getElementById('you')
-    you.innerHTML = yourScore;
-    yourScore += 1;
-   
-   
-}
-
-
-function updateComputerScore(){
-    let computer = document.getElementById('computer')
-    computer.innerHTML = computerScore;
-    computerScore += 1;
-    
-    
 }
 
 
@@ -116,11 +105,11 @@ rock.addEventListener('click', ()=>{
         const computerChoice = getComputerChoice();
         console.log('you threw: ' + playerChoice);
         console.log('the computer threw: ' + computerChoice);
-        console.log(determineTheWinner(playerChoice, computerChoice));
+        console.log(compareChoices(playerChoice, computerChoice));
 
         const result = document.getElementById('result')
 
-        result.innerHTML = 'You threw: ' + playerChoice + '. ' + 'The computer threw: ' + computerChoice + '. ' + determineTheWinner(playerChoice, computerChoice);
+        result.innerHTML = 'You threw: ' + playerChoice + '. ' + 'The computer threw: ' + computerChoice + '. ';
     }
     
     playRound();
@@ -132,12 +121,12 @@ paper.addEventListener('click', ()=>{
         const computerChoice = getComputerChoice();
         console.log('you threw: ' + playerChoice);
         console.log('the computer threw: ' + computerChoice);
-        console.log(determineTheWinner(playerChoice, computerChoice));
+        console.log(compareChoices(playerChoice, computerChoice));
 
         
         const result = document.getElementById('result')
     
-        result.innerHTML = 'you threw: ' + playerChoice + '. ' + 'The computer threw: ' + computerChoice  + '. ' + determineTheWinner(playerChoice, computerChoice);
+        result.innerHTML = 'you threw: ' + playerChoice + '. ' + 'The computer threw: ' + computerChoice  + '. ';
     }
     
     playRound();
@@ -148,19 +137,19 @@ scissor.addEventListener('click', ()=>{
     function playRound () {
         const playerChoice = getUserChoice('scissor');
         const computerChoice = getComputerChoice();
-        
         console.log('you threw: ' + playerChoice);
         console.log('the computer threw: ' + computerChoice);
-        console.log(determineTheWinner(playerChoice, computerChoice)); 
+        console.log(compareChoices(playerChoice, computerChoice));
+        
+       
 
        
         const result = document.getElementById('result')
         const whoWon = document.getElementById('whoWon')
     
-        result.innerHTML = 'you threw: ' + playerChoice + '. ' +  'The computer threw: ' + computerChoice + '. ' + determineTheWinner(playerChoice, computerChoice);  
-    
+        result.innerHTML = 'you threw: ' + playerChoice + '. ' +  'The computer threw: ' + computerChoice + '. ';  
 
-   
+        
     }
 
     playRound();
